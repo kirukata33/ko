@@ -4,6 +4,27 @@
 @source '../../storage/framework/views/*.php';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Palet warna khas KONSIT — navy gelap + emerald/teal, dibuat beda dari referensi (hitam + oranye) */
+    --color-konsit-navy: #0b1f2a;
+    --color-konsit-navy-light: #14303f;
+    --color-konsit-teal: #0d9488;
+    --color-konsit-teal-light: #2dd4bf;
+    --color-konsit-cream: #f8f7f2;
+    --color-konsit-ink: #1a2b2f;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+@keyframes konsit-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.animate-konsit-marquee {
+    animation: konsit-marquee 28s linear infinite;
 }
