@@ -1,26 +1,15 @@
-{{-- Placeholder testimoni — ganti dengan testimoni klien asli KONSIT nanti --}}
+@if ($testimonials->isNotEmpty())
 <section class="bg-konsit-navy py-16 sm:py-24">
-    <div class="max-w-5xl mx-auto px-6 lg:px-8"
-         x-data="{
-            active: 0,
-            items: [
-                {
-                    quote: 'Sejak menggunakan solusi dari KONSIT, proses operasional kami jadi jauh lebih rapi. Tim tidak lagi kewalahan menangani permintaan yang terus bertambah.',
-                    name: 'Dian Pratama',
-                    role: 'Direktur Operasional, Nexora'
-                },
-                {
-                    quote: 'Implementasinya cepat dan tim KONSIT selalu responsif menjawab kebutuhan kami. Dashboard yang mereka bangun benar-benar membantu pengambilan keputusan harian.',
-                    name: 'Rina Wulandari',
-                    role: 'Head of IT, Vantar Group'
-                },
-                {
-                    quote: 'Yang saya suka dari KONSIT adalah pendekatannya yang disesuaikan kebutuhan kami, bukan solusi template. Hasilnya jauh lebih pas dengan proses bisnis kami.',
-                    name: 'Ahmad Fauzi',
-                    role: 'CEO, Brightlane'
-                },
-            ]
-         }">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        @php
+            $testimonialItems = $testimonials->map(fn ($t) => [
+                'quote' => $t->quote,
+                'name' => $t->name,
+                'role' => $t->role,
+            ])->values();
+        @endphp
+
+        <div x-data='{ active: 0, items: @json($testimonialItems) }'>
 
         <div class="flex items-center justify-between mb-10">
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Kata Mereka Tentang KONSIT</h2>
@@ -65,4 +54,6 @@
         </div>
 
     </div>
+    </div>
 </section>
+@endif

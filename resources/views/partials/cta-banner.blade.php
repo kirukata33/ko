@@ -11,7 +11,7 @@
                     <p class="mt-4 text-white/70 leading-relaxed">
                         Ceritakan tantangan bisnis Anda, tim KONSIT akan bantu rancang solusi yang paling sesuai — tanpa komitmen di awal.
                     </p>
-                    <a href="mailto:hello@konsit.id"
+                    <a href="mailto:{{ $contactEmail }}"
                        class="mt-8 inline-flex items-center rounded-full bg-konsit-teal px-8 py-3.5 text-sm font-semibold text-white hover:bg-konsit-teal-light transition">
                         Mulai Konsultasi Gratis
                     </a>
@@ -20,8 +20,8 @@
                 <div class="shrink-0 rounded-2xl bg-white/5 border border-white/10 px-8 py-8 w-full max-w-xs">
                     <p class="text-xs font-semibold text-white/40 uppercase tracking-wide mb-4">Hubungi Langsung</p>
                     <div class="space-y-3 text-sm">
-                        <p class="text-white/80">hello@konsit.id</p>
-                        <p class="text-white/80">+62 812-0000-0000</p>
+                        <p class="text-white/80">{{ $contactEmail }}</p>
+                        <p class="text-white/80">{{ $contactPhone }}</p>
                     </div>
                 </div>
             </div>

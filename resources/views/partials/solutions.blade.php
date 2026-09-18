@@ -1,3 +1,4 @@
+@if ($solutions->isNotEmpty())
 <section id="solusi" class="bg-white py-16 sm:py-24 scroll-mt-20">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
@@ -8,41 +9,16 @@
             </h2>
         </div>
 
-        <div x-data="{
-                active: 0,
-                tabs: [
-                    {
-                        label: 'Human Capital',
-                        title: 'Human Capital Management',
-                        desc: 'Kelola data karyawan, absensi, payroll, dan penilaian kinerja dalam satu sistem terintegrasi — kurangi pekerjaan administratif tim HR Anda.',
-                        cta: 'Pelajari Human Capital'
-                    },
-                    {
-                        label: 'CRM & Pelanggan',
-                        title: 'CRM & Customer Experience',
-                        desc: 'Pantau perjalanan pelanggan dari prospek hingga after-sales, respon cepat lewat satu dashboard, dan tingkatkan loyalitas pelanggan Anda.',
-                        cta: 'Pelajari CRM & CX'
-                    },
-                    {
-                        label: 'Infrastruktur IT',
-                        title: 'Infrastruktur & Kolaborasi Tim',
-                        desc: 'Upgrade sistem IT dan alat kolaborasi tim Anda agar kerja lebih efisien, aman, dan bisa diakses dari mana saja.',
-                        cta: 'Pelajari Infrastruktur IT'
-                    },
-                    {
-                        label: 'Keamanan IT',
-                        title: 'IT Security',
-                        desc: 'Lindungi data dan sistem bisnis Anda dari ancaman siber dengan proteksi berlapis dan backup yang andal.',
-                        cta: 'Pelajari IT Security'
-                    },
-                    {
-                        label: 'ERP & BI',
-                        title: 'ERP & Business Intelligence',
-                        desc: 'Satukan proses keuangan, operasional, dan pengambilan keputusan lewat data real-time yang mudah dipahami.',
-                        cta: 'Pelajari ERP & BI'
-                    },
-                ]
-             }"
+        @php
+            $solutionTabs = $solutions->map(fn ($s) => [
+                'label' => $s->label,
+                'title' => $s->title,
+                'desc' => $s->description,
+                'cta' => $s->cta_text,
+            ])->values();
+        @endphp
+
+        <div x-data='{ active: 0, tabs: @json($solutionTabs) }'
              class="grid lg:grid-cols-[280px_1fr] gap-8">
 
             {{-- Daftar tab --}}
@@ -75,3 +51,4 @@
         </div>
     </div>
 </section>
+@endif
