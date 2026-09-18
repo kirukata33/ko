@@ -14,7 +14,7 @@
                 </h1>
 
                 <p class="mt-6 text-lg text-konsit-ink/70 leading-relaxed max-w-lg mx-auto">
-                    KONSIT membantu bisnis Anda merancang dan menerapkan solusi digital — dari infrastruktur IT, CRM, hingga sistem ERP — dengan pendekatan yang disesuaikan kebutuhan.
+                    KONSIT membantu bisnis Anda merancang dan menerapkan solusi digital dari infrastruktur IT, CRM, hingga sistem ERP dengan pendekatan yang disesuaikan kebutuhan.
                 </p>
 
                 <div class="mt-9 flex flex-wrap items-center justify-center gap-4">
